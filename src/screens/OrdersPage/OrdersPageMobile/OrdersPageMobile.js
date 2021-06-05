@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import * as actions from "../../store/actions/index";
-import OrdersPageMobile from "./OrdersPageMobile/OrdersPageMobile";
-class OrdersPage extends Component {
+import * as actions from "../../../store/actions/index";
+class OrdersPageMobile extends Component {
   componentDidMount() {
     this.props.fetchOrders();
+    console.log(this.props.orders);
   }
   render() {
-    return <OrdersPageMobile />;
+    return <p>no elo</p>;
   }
 }
 const mapStateToProps = (state) => {
   return {
-    numberOfReservations: state.numberOfReservations,
+    orders: state.orders,
     loading: state.loading,
   };
 };
@@ -23,4 +23,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OrdersPage);
+export default connect(mapStateToProps, mapDispatchToProps)(OrdersPageMobile);

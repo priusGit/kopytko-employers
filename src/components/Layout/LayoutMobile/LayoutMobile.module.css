@@ -1,0 +1,17 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+.navIconCont {
+  background-color: red;
+}
+h1 {
+  text-align: center;
+  flex-grow: 2;
+  margin: 0;
+  line-height: 50px;
+}
+.navBar div {
+  flex-basis: 30px;
+}

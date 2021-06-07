@@ -3,16 +3,16 @@ import { connect } from "react-redux";
 import * as actions from "../../store/actions/index";
 import OrdersPageMobile from "./OrdersPageMobile/OrdersPageMobile";
 class OrdersPage extends Component {
-  componentDidMount() {
-    this.props.fetchOrders();
-  }
   render() {
-    return <OrdersPageMobile />;
+    return (
+      <div>
+        <OrdersPageMobile />
+      </div>
+    );
   }
 }
 const mapStateToProps = (state) => {
   return {
-    numberOfReservations: state.numberOfReservations,
     loading: state.loading,
   };
 };

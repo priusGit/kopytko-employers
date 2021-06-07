@@ -1,0 +1,31 @@
+.mobileOrderComponent {
+  margin-bottom: 15px;
+  width: 80vw;
+  padding: 20px 0;
+  border: 1px solid blue;
+  display: grid;
+  grid-template-columns: 15vw 30vw 15vw 10vw 10vw;
+}
+.mobileOrderComponent * {
+  display: inline-block;
+}
+.hour {
+  padding-left: 5px;
+}
+.name {
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.status {
+  text-align: right;
+}
+.more {
+  text-align: right;
+  padding-right: 5px;
+}
+.more svg,
+.status svg {
+  height: 20px;
+  width: 20px;
+}

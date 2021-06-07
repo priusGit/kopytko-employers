@@ -21,7 +21,6 @@ export const fetchOrdersFail = (error) => {
 };
 // todo
 export const fetchOrders = () => {
-  console.log("workingggggg");
   return (dispatch) => {
     dispatch(fetchOrdersStart());
 
@@ -29,7 +28,6 @@ export const fetchOrders = () => {
       .get("/orders.json")
       .then((res) => {
         dispatch(fetchOrdersSuccess(res.data));
-        console.log(res.data);
       })
       .catch((error) => {
         dispatch(fetchOrdersFail(error));

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-class App extends Component {
+class MainPage extends Component {
   render() {
     return <p>sieam</p>;
   }
 }
-export default App;
+export default MainPage;

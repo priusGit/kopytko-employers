@@ -4,7 +4,7 @@
   position: absolute;
   top: 50px;
   left: -90vw;
-  background-color: red;
+  background-color: rgb(96, 96, 197);
   transition: 0.1s linear;
 }
 div.open {

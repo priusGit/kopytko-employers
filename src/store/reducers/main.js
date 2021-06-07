@@ -6,6 +6,7 @@ const initialState = {
   loading: null,
   loggedIn: null,
   orders: null,
+  messages: null,
 };
 
 const sendMessageStart = (state) => {
@@ -18,6 +19,22 @@ const sendMessageSuccess = (state) => {
 
 const sendMessageFail = (state) => {
   return updateObject(state, { loading: false });
+};
+const fetchMessageStart = (state) => {
+  return updateObject(state, { loading: true });
+};
+
+const fetchMessageSuccess = (state, action) => {
+  return updateObject(state, {
+    loading: false,
+    messages: action.messages,
+  });
+};
+
+const fetchMessageFail = (state) => {
+  return updateObject(state, {
+    loading: false,
+  });
 };
 
 const sendReservationStart = (state) => {
@@ -124,6 +141,12 @@ const reducer = (state = initialState, action) => {
       return sendMessageSuccess(state, action);
     case actionTypes.SEND_MESSAGE_FAIL:
       return sendMessageFail(state, action);
+    case actionTypes.FETCH_MESSAGES_START:
+      return fetchMessageStart(state, action);
+    case actionTypes.FETCH_MESSAGES_SUCCESS:
+      return fetchMessageSuccess(state, action);
+    case actionTypes.FETCH_MESSAGES_FAIL:
+      return fetchMessageFail(state, action);
     //reservations
     case actionTypes.UPDATE_RESERVATION_START:
       return sendReservationStart(state, action);

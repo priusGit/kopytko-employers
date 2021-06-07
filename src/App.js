@@ -20,11 +20,7 @@ class App extends Component {
         <Route path="/orders" exact component={OrdersPage} />
       </Switch>
     );
-    return (
-      <>
-        <Layout>{routes}</Layout>
-      </>
-    );
+    return <Layout>{routes}</Layout>;
   }
 }
 export default withRouter(App);

@@ -1,7 +1,26 @@
 import React, { Component } from "react";
-class App extends Component {
+import { connect } from "react-redux";
+import * as actions from "../../store/actions/index";
+import MessagesPageMobile from "./MessagesPageMobile/MessagesPageMobile";
+class MessagesPage extends Component {
   render() {
-    return <p>sieam</p>;
+    return (
+      <div>
+        <MessagesPageMobile />
+      </div>
+    );
   }
 }
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    loading: state.loading,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchOrders: () => dispatch(actions.fetchOrders()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MessagesPage);

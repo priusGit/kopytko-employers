@@ -1,5 +1,5 @@
-import * as actionTypes from "./actionTypes";
-import axios from "../../axios-orders";
+import * as actionTypes from "../actionTypes";
+import axios from "../../../axios-orders";
 export const sendMessagesStart = () => {
   return {
     type: actionTypes.SEND_MESSAGE_START,
@@ -39,9 +39,10 @@ export const fetchMessageStart = () => {
   };
 };
 
-export const fetchMessageSuccess = () => {
+export const fetchMessageSuccess = (messages) => {
   return {
     type: actionTypes.FETCH_MESSAGES_SUCCESS,
+    messages: messages,
   };
 };
 
@@ -52,13 +53,13 @@ export const fetchMessageFail = (error) => {
   };
 };
 //todo
-export const fetchMessages = (messageData) => {
+export const fetchMessages = () => {
   return (dispatch) => {
     dispatch(fetchMessageStart());
     axios
-      .get("/messages.json", messageData)
-      .then(() => {
-        dispatch(fetchMessageSuccess());
+      .get("/messages.json")
+      .then((res) => {
+        dispatch(fetchMessageSuccess(res.data));
       })
       .catch((error) => {
         dispatch(fetchMessageFail(error));

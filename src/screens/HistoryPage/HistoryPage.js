@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-class App extends Component {
+class HistoryPage extends Component {
   render() {
-    return <p>sieam</p>;
+    return <p>ffffffffff</p>;
   }
 }
-export default App;
+export default HistoryPage;

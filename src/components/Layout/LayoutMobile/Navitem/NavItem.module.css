@@ -7,6 +7,7 @@ li.NavItem {
   width: 30%;
   border-top: 1px solid white;
 }
+
 .navlink {
   color: white;
   cursor: pointer;
@@ -17,10 +18,10 @@ li.NavItem {
 }
 .navlink:hover {
   transition: 0.15s ease-in;
-  color: black;
+  color: rgb(220, 157, 39);
 }
 .navlinkActive {
-  color: black;
+  color: rgb(220, 157, 39);
 }
 @media (min-width: 768px) {
   li.NavItem {
